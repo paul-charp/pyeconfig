@@ -57,7 +57,7 @@ def get_config(config_file: str, keys: list[str] = list()) -> dict[str]:
 
     if not keys:
         for d in dir(config_mod):
-            if not d.startswith('__') and bool(re.match(PATTERN, d)):
+            if not d.startswith('__') and bool(match(PATTERN, d)):
                 keys.append(d)
 
     else:
